@@ -1,0 +1,113 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment_1
+{
+    abstract class Shape
+    { /*Create an abstract class "Shape", having three methods such as public void diameter();
+        public void chord();
+        public void radius();
+        public void sector();
+        create two child classes "Square" and "Circle". Inherit the three methods
+        from the abstract class and display results accordingly.*/
+        public abstract void diameter();
+        public abstract void chord();
+        public abstract void sector();
+        public abstract void radius();
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Circle obj = new Circle();
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine( "for Circle :");
+            obj.diameter();
+            obj.chord();
+            obj.sector();
+            obj.radius();
+            Console.ResetColor();
+            Square obj2 = new Square();
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("for Square :");
+            obj2.chord();
+            obj2.diameter();
+            obj2.radius();
+            obj2.sector();
+            Console.ReadLine();
+        }
+    }
+}
+
+===========================Class Square======================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment_1
+{
+    class Square : Shape
+    {
+        public override void diameter()
+        {
+            Console.WriteLine("diameter of square can be calculated by drawing a circle in it  ");
+        }
+        public override void chord()
+        {
+            Console.WriteLine("Chord doesn't exist in square ");
+        }
+        public override void radius()
+        {
+            Console.WriteLine("radius is the distance from the centre to any of the veritces of square ");
+        }
+        public override void sector()
+        {
+            Console.WriteLine("Sector has complicated formula ");
+        }
+
+    }
+    
+
+    
+
+
+
+}
+
+=========================Class Circle==================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment_1
+{
+    class Circle:Shape
+    {
+  
+            public override void diameter()
+            {
+                Console.WriteLine("diameter of circle is its double of radius ");
+            }
+            public override void chord()
+            {
+                Console.WriteLine("The line joining two point on  a circle is called Chord ");
+            }
+            public override void radius()
+            {
+                Console.WriteLine("half of diameter of circle is radius ");
+            }
+            public override void sector()
+            {
+                Console.WriteLine("sector is a small portion ");
+            }
+        }
+}
