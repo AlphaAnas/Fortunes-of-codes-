@@ -1,0 +1,196 @@
+PROGRAM.CS=======================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment_2
+{
+    /*1. Create a parent class "Departments", having properties such as name, location, no_Of_Employees.
+Create four child classes, "HR_Department", 'Accounts_Department',
+"Network_Department", "Admin". Applying multi-level inheritance, inherit the
+properties in child classes level-wise and display all the properties accordingly.*/
+
+    class Program
+    {
+        
+
+        static void Main(string[] args)
+        {
+            string dprt;
+            
+            Console.WriteLine( "Welcome to employees' Portal ");
+            Console.WriteLine("    Enter the name of Department:    ");
+            dprt =Console.ReadLine().ToUpper();
+
+            if (dprt == "NETWORK DEPARTMENT")
+            {
+                network_department obj = new network_department();
+
+                obj.name();
+                obj.location();
+                obj.no_of_employees();
+
+            }
+            else if (dprt == "ACCOUNT DEPARTMENT")
+            {
+                Account_department obj = new Account_department();
+                obj.name();
+                obj.location();
+                obj.no_of_employees();
+
+            }
+            else if (dprt == "ADMIN DEPARTMENT")
+            {
+                Admin obj = new Admin();
+                obj.name();
+                obj.location();
+                obj.no_of_employees();
+
+            }
+            else if (dprt == "HR DEPARTMENT")
+            {
+                HR_Department obj = new HR_Department();
+                obj.name();
+                obj.location();
+                obj.no_of_employees();
+
+            }
+            else
+            {
+             
+                
+                Console.WriteLine("no such department exists : want to continue? no? ");
+                Console.ResetColor();
+            }
+            Console.ReadLine();
+
+
+        }
+    }
+}
+
++++++++++++Abstract Class "Department"
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment_2
+{
+    abstract class department
+    {
+        public abstract void no_of_employees();
+        public abstract void name();
+        public abstract void location(); 
+    }
+}
+
++++++++++++++++Class Network Department+++++++++++++
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment_2
+{
+    class network_department:department
+    {
+        public override void name()
+        {
+            Console.WriteLine("**Network Department**");
+        }
+        public override void no_of_employees()
+        {
+            Console.WriteLine( "No. of Employees : 13" );
+        }
+        public override void location()
+        {
+            Console.WriteLine("Location : 3rd Floor IT-Room") ;
+
+        }
+    }
+}
+++++++++++++++++++++++++Class Accounts Department+++++++
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment_2
+{
+    class Account_department:department
+    {
+        public override void name()
+        {
+            Console.WriteLine("**Accounts Department**");
+        }
+        public override void no_of_employees()
+        {
+            Console.WriteLine("No. of Employees : 33");
+        }
+        public override void location()
+        {
+            Console.WriteLine("Location : Top Floor");
+
+        }
+    }
+}
++++++++++++++Class Admin
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment_2
+{
+    class Admin:department
+    {
+        public override void name()
+        {
+            Console.WriteLine("**Admin Department**");
+        }
+        public override void no_of_employees()
+        {
+            Console.WriteLine("No. of Employees : 10");
+        }
+        public override void location()
+        {
+            Console.WriteLine("Location : Ground Floor");
+
+        }
+    }
+}
+
+++++++++++++++++Class HR Department+++++++++++
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment_2
+{
+    class HR_Department:department
+    {
+        public override void name()
+        {
+            Console.WriteLine("**HR Department**");
+        }
+        public override void no_of_employees()
+        {
+            Console.WriteLine("No. of Employees : 20" );
+        }
+        public override void location()
+        {
+            Console.WriteLine("Location : 2nd Floor, Room No.10");
+
+        }
+    }
+}
+
