@@ -1,0 +1,82 @@
+=========Program. Cs============
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace method_overloading
+{
+    class Program
+    {
+        /*build a program to take name age and CNIC no. from the user, if the age is less than 18 than take three; name age and bay-form number from the user
+        and if the age is 18 or more only take name and cnic no.*/
+        static void Main(string[] args)
+        {
+            int age;
+            string name;
+            int CNIC;
+
+            Console.Write("Welcome to Water Park Booking !!\n");
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Enter your name :");
+            name = Console.ReadLine();
+            Console.WriteLine("\n\nNow enter your age: ");
+            age = int.Parse(Console.ReadLine());
+            Console.ResetColor();
+            function obj = new function();
+            try
+            {
+                if (age < 18)
+                {
+                    Console.WriteLine("please enter your Bay-form/CNIC No.");
+                    CNIC = int.Parse(Console.ReadLine());
+                    obj.age(name, age, CNIC);
+                }
+                else if (age >=18)
+                {
+                    obj.age(name, age);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            Console.ReadLine();
+           
+           
+        }
+    }
+}
+
+====================Class Function=================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace method_overloading
+{
+    class function
+    {
+        
+            public void age(string name, int age)
+            {
+                Console.WriteLine("//method with two inputs");
+            Console.WriteLine($"age : {age}\n name : {name}");
+
+            }
+
+
+            public void age(string name, int age, int CNIC)
+            {
+
+
+                Console.WriteLine("//method with three inputs");
+
+            Console.WriteLine($"name:{name} \n age:{age} \n CNIC : {CNIC}");
+            }
+        }
+    }
+
